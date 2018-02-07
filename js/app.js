@@ -6,7 +6,18 @@ var Enemy = function() {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+    this.x = ?;
+    this.y = ?;
 };
+
+//TYLER adding the player character function
+var Player = function() {
+    avatar = player.handleInput(clickObject);
+    //image/sprite for our Player
+    this.sprite = avatarChoice;
+    this.x = ??;
+    this.y = ??;
+}
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -15,6 +26,10 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 };
+
+Player.prototype.update = function() {
+  
+}
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
