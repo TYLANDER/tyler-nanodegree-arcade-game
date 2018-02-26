@@ -1,21 +1,24 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+    this.speed = speed;
     this.x = 0;
     this.y = y;
 };
 
 //TYLER adding the player character function
+/*
 var Player = function() {
 
     this.x = ??;
     this.y = ??;
 }
+*/
 
 
 
@@ -55,7 +58,7 @@ let Player = function() {
     this.x = 200;
     this.y = 380;
 
-}
+};
 
 /*
 // Function to increase the scoreboard
