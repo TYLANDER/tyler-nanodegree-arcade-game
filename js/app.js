@@ -3,21 +3,21 @@
 // BOARD values to determine objects moves and position
 // width, height, numRows, numCols refer to values from engine.js
 const BOARD = {
-    width : 505,
-    height : 606,
-    numRows : 6,
-    numCols : 5,
-    dx : 101,
-    dy : 83,
+    width: 505,
+    height: 606,
+    numRows: 6,
+    numCols: 5,
+    dx: 101,
+    dy: 83,
     playerStartPosition: {
-        x : 202,
-        y : 404,
+        x: 202,
+        y: 404,
     },
-    Boundary : { // inclusive values
-        left : 0,
-        right : 404,
-        up : 404-83*5,
-        down : 404,
+    Boundary: { // inclusive values
+        left: 0,
+        right: 404,
+        up: 404 - 83 * 5,
+        down: 404,
     },
 };
 Object.seal(BOARD);
@@ -33,25 +33,25 @@ let playerLives = 3;
 let playerScore = 0;
 
 //this function starts the game
-function startGame(){
+function startGame() {
     startModal.classList.add("hide");
     overlay.classList.add("hide");
 }
 
 function checkLives() {
-    if (lives.length === 0){
+    if (lives.length === 0) {
         gameOver();
     }
 }
 
 //this is run when player looses all lives
-function gameOver(){
+function gameOver() {
     overlay.classList.add("show");
     gameover.classList.add("show");
 }
 
 // this function resets the game
-function resetGame(){
+function resetGame() {
     window.location.reload(true);
 }
 
@@ -97,7 +97,7 @@ Enemy.prototype.update = function(dt) {
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
-   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Now write your own player class
@@ -125,7 +125,7 @@ class Player {
 
     // update player's position inside the board.
     update() {
-        if (this.currentPosition.y === 404-83*5) {
+        if (this.currentPosition.y === 404 - 83 * 5) {
             updateScore();
 
             if (playerScore == 10) {
@@ -134,7 +134,7 @@ class Player {
 
             this.resetPlayer();
         }
-        switch(this.pressedKey) {
+        switch (this.pressedKey) {
             case null:
                 // no input. don't do anything.
                 break;
@@ -208,7 +208,7 @@ function initScore() {
 
 // update the score count
 function updateScore() {
-    playerScore ++;
+    playerScore++;
 
     scoreText.textContent = playerScore;
 }
@@ -216,15 +216,13 @@ function updateScore() {
 
 
 
-
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [
-    new Enemy(404-83*2, 275),
-    new Enemy(404-83*3, 150),
-    new Enemy(404-83*4, 200)
-  ];
+    new Enemy(404 - 83 * 2, 275),
+    new Enemy(404 - 83 * 3, 150),
+    new Enemy(404 - 83 * 4, 200)
+];
 // Place the player object in a variable called player
 const player = new Player();
 
@@ -237,7 +235,7 @@ let lives = [
     new Lives(208, 540),
     new Lives(239, 540),
     new Lives(270, 540)
-  ];
+];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
