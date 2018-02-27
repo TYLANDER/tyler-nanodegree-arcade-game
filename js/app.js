@@ -1,8 +1,8 @@
 "use strict";
 
-// BOARD object allows the creation of objects moves and position
+// Board object allows the creation of objects moves and position
 // width, height, numRows, numCols are from engine.js
-const BOARD = {
+const Board = {
     width: 505,
     height: 606,
     numRows: 6,
@@ -20,7 +20,7 @@ const BOARD = {
         down: 404,
     },
 };
-Object.seal(BOARD);
+Object.seal(Board);
 
 // declaring important variable of different modales
 let startModal = document.querySelector(".start-game");
@@ -75,8 +75,8 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    if (this.x > BOARD.Boundary.right) {
-        this.x = BOARD.Boundary.left;
+    if (this.x > Board.Boundary.right) {
+        this.x = Board.Boundary.left;
     } else {
         this.x += this.speed * dt;
 
@@ -104,7 +104,7 @@ Enemy.prototype.render = function() {
 class Player {
     constructor() {
         this.sprite = 'images/char-boy.png';
-        this.currentPosition = BOARD.playerStartPosition;
+        this.currentPosition = Board.playerStartPosition;
         this.pressedKey = null;
         this.halfWidth = 30;
     }
@@ -121,7 +121,7 @@ class Player {
         return this.halfWidth;
     }
 
-    // update player's position inside the board.
+    // update player's position inside the Board.
     update() {
         if (this.currentPosition.y === 404 - 83 * 5) {
             updateScore();
@@ -138,26 +138,26 @@ class Player {
                 break;
             case "left":
                 // move left if player is not in the left boundary
-                if (this.currentPosition.x !== BOARD.Boundary.left) {
-                    this.currentPosition.x -= BOARD.dx;
+                if (this.currentPosition.x !== Board.Boundary.left) {
+                    this.currentPosition.x -= Board.dx;
                 }
                 break;
             case "up":
                 // move up if player is not in the upper boundary
-                if (this.currentPosition.y !== BOARD.Boundary.up) {
-                    this.currentPosition.y -= BOARD.dy;
+                if (this.currentPosition.y !== Board.Boundary.up) {
+                    this.currentPosition.y -= Board.dy;
                 }
                 break;
             case "right":
                 // move right if player is not in the right boundary
-                if (this.currentPosition.x !== BOARD.Boundary.right) {
-                    this.currentPosition.x += BOARD.dx;
+                if (this.currentPosition.x !== Board.Boundary.right) {
+                    this.currentPosition.x += Board.dx;
                 }
                 break;
             case "down":
                 // move down if player is not in the down boundary
-                if (this.currentPosition.y !== BOARD.Boundary.down) {
-                    this.currentPosition.y += BOARD.dy;
+                if (this.currentPosition.y !== Board.Boundary.down) {
+                    this.currentPosition.y += Board.dy;
                 }
                 break;
         }
