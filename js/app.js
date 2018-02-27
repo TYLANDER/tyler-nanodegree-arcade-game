@@ -11,16 +11,6 @@ var Enemy = function(y, speed) {
     this.y = y;
 };
 
-//TYLER adding the player character function
-/*
-var Player = function() {
-
-    this.x = ??;
-    this.y = ??;
-}
-*/
-
-
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -52,15 +42,13 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 let Player = function() {
-    avatar = player.handleInput(clickObject);
     //image/sprite for our Player
-    this.sprite = avatarChoice;
+    this.sprite = 'images/char-boy.png';
     this.x = 200;
     this.y = 380;
-
 };
 
-/*
+
 // Function to increase the scoreboard
 function increaseScore() {
     const scoreBoard = document.getElementById('score');
@@ -76,7 +64,7 @@ function decreaseScore() {
     scoreCounter = 0;
     scoreBoard.innerHTML = scoreCounter;
 }
-*/
+
 
 //I think this can be compressed with the player variable
 Player.prototype.update = function() {};
@@ -91,11 +79,12 @@ Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
 };
 
+
 //Move the player avatar on keypress.
-Player.prototype.handleInput + function(key) {
+Player.prototype.handleInput = function(key) {
   if (key == 'up' && this.y < 140) { //if the player reaches the water they win.
     this.reset();
-    //increaseScore();
+    increaseScore();
   } else if (key == 'left' && this.x > 0) {
     this.x = this.x - 100;
   } else if (key == 'right' && this.x < 400) {
@@ -126,7 +115,7 @@ function getRandomIntInclusive(min, max) {
 const enemyRows = [220, 140, 60];
 
 // I feel it was best to populate every row with enemies. But I would like this to randomize.
-for (i = 0; i < 2; i++) {
+for (i = 0; i < 3; i++) {
   allEnemies.push(new Enemy(enemyRows[Math.floor(Math.random() * enemyRows.length)], (getRandomIntInclusive(2, 6) * 30)));
 }
 
