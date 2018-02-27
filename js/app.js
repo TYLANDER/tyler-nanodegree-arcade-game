@@ -1,7 +1,7 @@
 "use strict";
 
-// BOARD values to determine objects moves and position
-// width, height, numRows, numCols refer to values from engine.js
+// BOARD object allows the creation of objects moves and position
+// width, height, numRows, numCols are from engine.js
 const BOARD = {
     width: 505,
     height: 606,
@@ -44,13 +44,11 @@ function checkLives() {
     }
 }
 
-//this is run when player looses all lives
 function gameOver() {
     overlay.classList.add("show");
     gameover.classList.add("show");
 }
 
-// this function resets the game
 function resetGame() {
     window.location.reload(true);
 }
@@ -212,8 +210,6 @@ function updateScore() {
 
     scoreText.textContent = playerScore;
 }
-
-
 
 
 // Now instantiate your objects.
