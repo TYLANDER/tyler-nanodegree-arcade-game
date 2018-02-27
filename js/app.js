@@ -173,8 +173,8 @@ class Player {
     }
 
     resetPlayer() {
-        this.currentPosition.x = 200;
-        this.currentPosition.y = 380;
+        this.currentPosition.x = 202;
+        this.currentPosition.y = 404;
         this.render();
     }
 

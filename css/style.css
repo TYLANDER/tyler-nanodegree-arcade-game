@@ -1,7 +1,8 @@
 body {
     text-align: center;
-    background-color: rgb(102, 171, 250);
+    background-color: #19a974;
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 canvas {
@@ -10,6 +11,7 @@ canvas {
 
 #score {
     font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 p {
@@ -27,23 +29,26 @@ p {
     right: 0;
     margin: 0 auto;
     border-radius: 5px;
+
 }
 
 .start-game {
     position: absolute;
-    background-color: rgb(102, 171, 250);
-    border-radius: 5px;
+    background-color: #5e2ca5;
+    border-radius: 3px;
+    border
+    border-color: red;
     left: 0;
     right: 0;
     top: 100px;
-    width: 420px;
-    height: 300px;
+    width: 460px;
+    height: 360px;
     margin: 0 auto;
     padding: 1em 2em;
 }
 
 .start-game button {
-    background-color: rgb(27, 161, 9);
+    background-color: #19a974;
     border: none;
     border-radius: 5px;
     padding: 1em;
@@ -63,7 +68,7 @@ p {
 
 .game-over {
     position: absolute;
-    background-color: #af0a10;
+    background-color: #000000;
     border-radius: 5px;
     left: 0;
     right: 0;
@@ -77,7 +82,7 @@ p {
 }
 
 .game-over button {
-    background-color: rgb(27, 161, 9);
+    background-color: #19a974;
     border: none;
     border-radius: 5px;
     padding: 1em;
